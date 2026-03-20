@@ -12,10 +12,10 @@ import (
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
-		http.Error(w, "non-root path requested", http.StatusInternalServerError)
+		http.Error(w, "non-root path requested", http.StatusNotFound)
 		return
 	}
-	http.ServeFile(w, r, "../index.html")
+	http.ServeFile(w, r, "index.html")
 }
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
